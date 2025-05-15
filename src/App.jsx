@@ -1,15 +1,15 @@
 import { useState } from 'react'
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { createRoot } from 'react-dom/client'
 import { MovieProvider } from "./contexts/MovieContext";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import ReactDom from 'react-dom/client'
+import ReactDOM from 'react-dom/client'
 import Home from './pages/Home';
 import Favorite from './pages/Favorite';
 import "./css/App.css";
 
-ReactDom.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+createRoot(document.getElementById('root')).render(
+  <BrowserRouter basename='/Movie-App-Showcase/'>
   <MovieProvider>
   <Routes>
     <Route path="/" element={<Home/>}/>
@@ -17,7 +17,7 @@ ReactDom.createRoot(document.getElementById('root')).render(
   </Routes>
   </MovieProvider>
   </BrowserRouter>
-)
+);
 
 export default App;
 
